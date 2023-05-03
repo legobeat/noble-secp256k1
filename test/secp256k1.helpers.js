@@ -1,6 +1,12 @@
+// @ts-ignore
+import { webcrypto } from 'node:crypto';
+// @ts-ignore
+if (process.env['TEST_WEBCRYPTO']) {
+    // @ts-ignore
+    globalThis.crypto = webcrypto;
+}
 import * as secp_1 from '../index.js';
 export { secp_1 as secp };
-// @ts-ignore
 import * as secp256k1 from '../index.js';
 import { hmac } from '@noble/hashes/hmac';
 import { sha256 } from '@noble/hashes/sha256';
